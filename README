@@ -1,0 +1,199 @@
+Caeli Massey (no partner)
+
+I affirm I have adhered to the Honor Code on this assignment. - Caeli Massey
+
+~This README file feels so long ah I'm sorry in advance ~
+
+Because FileReader only worked on files and I didn't realize StringReader was a thing until later,
+my FrequencyCounter/MarkovModel files will work when given a file OR a string. One annoying thing is 
+that the count for the very last k-length string is handled differently depending on which type
+of input provided! A string will not add a new successor to the model for the last k-length string,
+while the file adds some weird line break character I haven't been able to actually detect to prevent
+it. (I tried testing for the empty string and a line break, but neither worked?)
+Here's an example:
+
+cmassey2@altair:~/cs151/lab9$ java FrequencyCounter 2
+Enter a string: abcde
+4 distinct keys
+0 de[]
+1 cd[e]
+1 bc[d]
+1 ab[c]
+cmassey2@altair:~/cs151/lab9$ java FrequencyCounter 2
+Enter a string: abcde.txt
+4 distinct keys
+1 de[
+]
+1 cd[e]
+1 bc[d]
+1 ab[c]
+
+One other thing is that the console prints "&#8230;" when I think it should be an ellipses (according
+to Google), but I'm not sure that's my fault!
+Besides that, I don't think there are any obvious issues with my code.
+I used ArrayLists for storing the successors in MarkovModel.
+There are 3 tiny test text files included in my handin that didn't come in the lab 9 zip file.
+
+The parentheses above each text generation are just the arguments I fed the command line. :)
+
+
+
+
+
+I just appreciate the question mark on the scene setting!
+(10, 1000, Big Bang Theory)
+
+Scene: A corridor at a sperm bank?
+Receptionist: If you have a drug addicted cousin Leo.
+Leonard: You’re right.
+Howard: What are you doing?
+Leonard: It wasn’t on? 
+Howard: It means go straight. 
+Howard: Hey, I thought hey, fish nightlights.
+Sheldon: Ach, why not? We’re already through me. 
+Scene: Penny, Sheldon, Leonard, one tequila sunrise. 
+Leonard: Yes what? 
+Penny: Yeah, I do like the look of the guys meeting us here?
+Leonard: Six two inch dowels.
+Sheldon (looking around the way we did when we were little. Remember? (Sheldon looks lost. He is about yesterday, Leonard might come on guys, come on. The only thing missing from that insult was “yo mamma.” 
+Howard: No, it’s usually how these physics bowl the team did not mean to gaze upon you as you comb your hair.
+Lalita: No, it’s usually planning, courtship and advance notice. Last time I was able to book a cruise to the Arctic to see a solar eclipse. 
+Penny: Howard, can’t you see she’s using you?
+Howard: Go away.
+Sheldon: Truthfully, 
+
+
+This one is here mostly because I just think it's neat that as the k parameter gets pretty high it 
+basically just quotes actual lines of the show (or pretty close -- haven't watched this in ages)
+(15, 2000, Big Bang Theory)
+
+Scene: A corridor at the University?
+(Raj looks at her, looks back at his food, takes a mouthful).
+Penny: Uh, I’m sorry, do you speak English really well.
+Dennis: So do you. Except for your tendency to end sentences with prepositions. 
+Leonard: What? 
+Sheldon: You think I haven’t considered that. We do share DNA.
+Leonard: Uh-huh.
+Raj: It’s only $800?
+Leonard: Yeah, no, I do, I use those&#8230; uh&#8230; at work.
+Penny: You sound funny.
+Leonard: I’m going to talk anyway.
+Sheldon: If the height of a single step is off by as little as two millimetres, most people will trip.
+Leonard: I don’t know, but if cats could sing, they’d hate it too. (The continue up the stairs.
+Leonard: Come on, think, Leslie.
+Leslie: Leonard, it’s not going to be a scene depicting Spock’s birth. 
+Raj: I’d be more interested in a scene depicting Spock’s conception. 
+Sheldon: Oh, I’m sorry, was that supposed to be a date?
+Leonard: Awesome!
+Sheldon: Score one for liquor and poor judgement.
+
+Scene: Sheldon’s bedroom. Mrs Cooper is tucking him in.
+Mrs Cooper: I’m very proud of you honey, you showed a lot of courage today.
+Sheldon: Thank you. You’re not done with her, are you?
+Leonard: Our babies will be smart and beautiful.
+Sheldon: Not to mention you’d have to power down on Saturdays. 
+Leonard: See you. (Penny exits singing) 
+Sheldon: You don’t think the colonoscopy was necessary. 
+Leonard: Forget it guys, if I sell to one of you, the other two are going to be needing them for at least the next thirty years.
+Penny: You want to know the most pathetic part? Even though I hate his lying, cheating guts, I still love him.
+Sheldon: That woman in there’s not going to work, but you keep trying. (To Raj) I made chicken, I hope that isn’t one of the animals that you people think is magic? You know, we have an Indian gentleman at our church, a Dr Patel, it’s a beautiful story, the lord spoke to him, and moved him to give us all 20% off on lasic, you know, those that needed it. 
+Leonard: I can’t because if I d
+
+
+
+This one isn't super funny, but the title fits a CS lab pretty well! 
+(10, 1500, Shakespeare)
+
+THE COMEDY OF ERRORS
+
+ACT I. Scene I.
+Elsinore. A room in the houres, in
+the meane time, I writ to Romeo,
+Who had but newly entertain the offer'd fallacy.
+LUCIANA. Fie, how impatience loureth in your shop will answer a man indeede,
+for I loue thee
+
+   Beat. Doe not you loue?
+  Rom. For your broken shin
+
+   Bene. A most manly wit Margaret, How her acquaintance grew with this Harpy: you haue to night, you shall behold him. Dead
+Is my poore house, looke to behold my Romeo
+
+   Mer. O calme, dishonour'd that haue coying to be done?
+  Priest. Her obsequies have been a time for a man to encounter
+
+   Con. Hold him in safety. There is no true valour, I came
+to seeke you both of you
+
+   Leon. I thanke him, he hath been from his mouth,
+    Had he been incorps'd and demi-natur'd
+    With martial stalk hath he gone by our watch up; and by my advice,
+    And to be baited with the dead bodies: I will apprehend thee for thy care and melancholy,
+  Kinsman to the Maskers.
+
+  1. Capu. Welcome then
+
+   Nur. I am a weary, giue me leaue awhile, and mark.
+                      Dies. Fleance escape your venom'd stuck,
+    Our tears are not set for.
+    My father- methinks they are dangerous
+That she doth but counterfeit presently mad. God helpe I would do
+my liking: in the message
+
+   Beat. You dare easier be friends first
+
+   Const. God saue the foundation
+
+   Prin. Where are the Beetle-browes shall blush for me
+
+   Ben. Come knocke and enter, and yourself. But for all thing unbecoming.
+
+
+
+(12, 1500,Friends)
+
+The One Where the Monkey Gets Away
+
+[Scene: Central Perk, everyone is there except for Ross, who thinks things are, like, other things, contains a chest of drawers with a shopping bag.)
+
+Joey
+: Hey, Phoebe, and Rachel and Phoebe: Sure.
+
+Rachel: (walks up with her. Will you help me out here? I promise I'll pay you back this time.
+
+Chandler: I'm sorry, might as well have nipples on them, and you could use them in your theater of cruelty.
+
+(Lorraine whispers into Joey's ear. Ross gets off next.)
+
+Ross: Oh, yeah. Yeah. Let her dangle.
+
+Monica: No, you?
+
+Monica: Oh God!
+
+(They hug.)
+
+[Scene: The Emergency Room, Joey is helping Rachel mail out resumes while whistling the theme from I Dream Of Jeannie.]
+
+Chandler: (gesturing towards another table) What about the mother-to-be, but.. thanks for letting me use your phone? (On phone) Yeah, you promise to buy me a big thumb finger?
+
+Chandler: Well, let's see, the FICA guys took all my money? I mean, what- Chandler, look at that.
+
+Opening Credits
+
+[Scene: Central Perk, everyone is there.]
+
+Chandler: Ooh, I hate when my father calls me that.
+
+Monica: Y'know, just because it involves a lot of being normal. For a large portion of the animal?
+
+Phoebe: Ok, who wants light cheese, and who wants dark cheese?
+
+Ross: I don't know. What are you shushing?
+
+Ross: Well, I don't know. Maybe, um, "That was nice?" Admit something by you. Y'know how we were, uh, y'know, talking before about, uh, how mad we got at each other.
+
+Monica: Why not?
+
+Ross: Becau
+
