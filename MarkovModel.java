@@ -13,7 +13,7 @@ import java.util.Random;
  * 
  * This program uses a hash map (using my MyHashMap class) to create a Markov model
  * for a given text file. It contains some of the same methods as MyHashMap because I 
- * found them useful in writing other parts of the lab. :)*/
+ * found them useful in writing other parts of the lab. */
 public class MarkovModel extends MyHashMap<String, ArrayList<String>> {
 
     MyHashMap<String, ArrayList<String>> markovMod; // Holds the k-length strings and possible successors
@@ -30,13 +30,11 @@ public class MarkovModel extends MyHashMap<String, ArrayList<String>> {
 	this.order = order;
 	markovMod = new MyHashMap<String, ArrayList<String>>();
 
-	// Reads in the file/string in character by character
+	// Reads the file/string in character by character
 	try {
 	    fileRead = new FileReader(this.file);
 	} catch (FileNotFoundException e1) {
-	    /* If a file of the given name cannot be located, it will read the name as a string. :) 
-	     * This is mainly for use in FrequencyCount, which the lab says should take a string (NOT
-	     * a file name) from the user. */
+	    /* If a file of the given name cannot be located, it will read the name as a string. */
 	    stringRead = new StringReader(this.file);
 	}
 
@@ -48,11 +46,11 @@ public class MarkovModel extends MyHashMap<String, ArrayList<String>> {
 	    String nextString;
 
 	    while ((fileRead != null && (nextChar = fileRead.read()) != -1) || (stringRead != null && (nextChar = stringRead.read()) != -1)) {
-		// The next character (plus a string version)
+		// The next character (as well as a string version)
 		char c = (char) nextChar;
 		String stringC = Character.toString(c);
 
-		// If there are k characters in the queue,time to add a new string to the hash
+		// If there are k characters in the queue, time to add a new string to the hash
 		// map!
 		if (nextKChars.size() == order) {
 		    nextString = "";
@@ -62,13 +60,12 @@ public class MarkovModel extends MyHashMap<String, ArrayList<String>> {
 			nextString += next;
 		    }
 
-		    // Either adds the string to the hash map or adds to n existing entry
+		    // Either adds the string to the hash map or adds to an existing entry
 		    if (markovMod.get(nextString) == null && !stringC.equals("")) {
 			markovMod.put(nextString, new ArrayList<String>());
 			markovMod.get(nextString).add(stringC);
 		    } else if (!stringC.equals("")) {
 			markovMod.get(nextString).add(stringC);
-			// System.out.println(nextString);
 		    }
 		    // Removes the first character from the queue (not needed once counted)
 		    nextKChars.remove();
@@ -80,9 +77,7 @@ public class MarkovModel extends MyHashMap<String, ArrayList<String>> {
 
 	    /*
 	     * The rest of the try block accounts for the very last k-length substring of a
-	     * string in FrequencyCount. My program didn't count it the way it does for a
-	     * file for some reason?
-	     */
+	     * string in FrequencyCount. */
 	    if (stringRead != null) {
 		nextString = "";
 		for (String next : nextKChars) {
