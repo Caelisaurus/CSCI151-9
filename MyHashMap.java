@@ -14,7 +14,7 @@ import java.util.Map;
  * lists and uses chaining to avoid collisions.*/
 public class MyHashMap<K, V> implements MapADT<K, V> {
 
-    int size; // The num of elements in the table
+    int size; // The number of elements in the table
     double MLF; // Max load factor, for resizing
     LinkedList<Map.Entry<K, V>>[] table; // Holds key/value pairs inserted in table.
 
@@ -38,7 +38,7 @@ public class MyHashMap<K, V> implements MapADT<K, V> {
     }
 
     /*
-     * Returns an integer corresponding to where the key should be places in the
+     * Returns an integer corresponding to where the key should be placed in the
      * hash map
      */
     private int hash(K key) {
@@ -47,7 +47,7 @@ public class MyHashMap<K, V> implements MapADT<K, V> {
 
     /*
      * A private helper method that tests the load factor of the hash map to see
-     * ifit's in need of resizing.
+     * if it's in need of resizing.
      */
     private void LFCheck() {
 	double loadFactor = (double) (this.size) / (double) (this.table.length);
@@ -81,7 +81,7 @@ public class MyHashMap<K, V> implements MapADT<K, V> {
 
     /*
      * This private helper method returns a prime that is larger than the hash map's
-     * current capacity so that resize always sets the new table size to a prime
+     * current capacity so that resize() always sets the new table size to a prime
      * number.
      */
     private int nextPrime(int i) {
@@ -97,15 +97,14 @@ public class MyHashMap<K, V> implements MapADT<K, V> {
 	    }
 	}
 
-	// Since the list has some suuuuper big nums, I don't see this ever actually
-	// executing!!
+	// (Since the list has some pretty huge numbers, I don't see this ever actually
+	// executing!)
 	return 1;
     }
 
     /* Adds a (key, value) pair in the correct index of the hash table */
     @Override
     public V put(K key, V value) {
-	// System.out.println("\nCalled put()\n");
 	int hashIndex = hash(key);
 	LinkedList<Map.Entry<K, V>> insertChain = table[hashIndex];
 
@@ -113,7 +112,7 @@ public class MyHashMap<K, V> implements MapADT<K, V> {
 	    throw (new NullPointerException("ERROR: Cannot insert null keys or values."));
 	} else {
 
-	    // SHould've used iterator here!! >:O
+	    // 
 	    for (int i = 0; i < insertChain.size(); i++) {
 		if (insertChain.get(i).getKey().equals(key)) {
 		    V toReturn = insertChain.get(i).getValue();
@@ -124,7 +123,6 @@ public class MyHashMap<K, V> implements MapADT<K, V> {
 
 	    insertChain.add(new AbstractMap.SimpleEntry<K, V>(key, value));
 	    this.size += 1;
-	    // System.out.println(this);
 	    LFCheck();
 	    return null;
 	}
