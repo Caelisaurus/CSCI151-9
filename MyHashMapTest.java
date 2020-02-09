@@ -46,7 +46,6 @@ public class MyHashMapTest {
 	test.put("two", 2);
 	test.put("three", 3);
 
-	// System.out.println(test.toString());
 
 	assertEquals("Should have resized!!", test.table.length, 11);
     }
@@ -151,11 +150,11 @@ public class MyHashMapTest {
 	test.clear();
 
 	assertTrue("Should be!", test.isEmpty());
-	assertNull("i.e. should not return and value for get()", test.get("one"));
+	assertNull("i.e. should not return any value for get()", test.get("one"));
     }
 
     /*
-     * Tests the toString operator (I did this test more visually rather than by
+     * Tests the toString operator (I did this test visually rather than by
      * assert methods)
      */
     @Test
